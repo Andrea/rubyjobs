@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 	  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	  <title>Rubyjobs</title>
+	  <title>RubyJobs</title>
 	  <%= stylesheet_link_tag 'main' %>
 	</head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1><a href="/">RubyJobs</a></h1>
+				<h1><%= link_to 'RubyJobs', :root %></h1>
 				<p>
 					<% if logged_in? %>
 						Hi <%= current_user.login %> <%= link_to 'logout', :logout %>
@@ -18,7 +18,9 @@
 				</p>
 			</div>
 			<div id="navigation">
-				the menu will go here
+				<ul>
+					<li><%= link_to 'Home', :root %></li>
+				</ul>
 			</div>
 			<div id="content">
 				<% for flash_key in flash.keys %>
