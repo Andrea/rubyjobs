@@ -1,0 +1,13 @@
+<h1>New job</h1>
+
+<% form_for(@job) do |form| %>
+  <%= form.error_messages %>
+
+	<%= render :partial => 'form_fields', :locals => {:form => form} %>
+
+  <p>
+    <%= form.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', jobs_path %>

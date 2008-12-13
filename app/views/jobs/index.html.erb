@@ -1,0 +1,16 @@
+<h1>Welcome to RubyJobs.ie</h1>
+
+<h2>Here are the jobs:</h2>
+
+<ul>
+	<% for job in @jobs %>
+	<li>
+		<%= link_to 'Show', job %>
+	</li>
+	<% end %>
+</ul>
+
+
+
+
+<%= link_to 'New job', new_job_path %>
