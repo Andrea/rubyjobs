@@ -42,7 +42,15 @@ describe Job do
 		end
 		
 		it "should ensure that a type_id is provided" do
-			pending
+				@job.attributes = valid_attributes.except(:type_id)
+				@job.should_not be_valid
+				@job.errors.on(:type_id).should_not be_nil
+		end
+		
+		it "should ensure that a location_id is provided" do
+				@job.attributes = valid_attributes.except(:location_id)
+				@job.should_not be_valid
+				@job.errors.on(:location_id).should_not be_nil
 		end
 		
 		it "should ensure that a title is provided" do
