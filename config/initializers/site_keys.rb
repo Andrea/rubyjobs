@@ -1,4 +1,3 @@
-#NOTE: GJ: I'll remove this file and change key once we are close to deployment, but I'll leave it here for now.
 
 # A Site key gives additional protection against a dictionary attack if your
 # DB is ever compromised.  With no site key, we store
@@ -17,7 +16,7 @@
 # Please note: if you change this, all the passwords will be invalidated, so DO
 # keep it someplace secure.  Use the random value given or type in the lyrics to
 # your favorite Jay-Z song or something; any moderately long, unpredictable text.
-REST_AUTH_SITE_KEY         = 'c4693a7a8637f52082c5bf24d894b9053e7bca3d'
+REST_AUTH_SITE_KEY         = 'dbfa36bab66046775b676fcec6115ef13d5e14fc'
   
 # Repeated applications of the hash make brute force (even with a compromised
 # database and site key) harder, and scale with Moore's law.

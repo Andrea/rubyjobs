@@ -10,13 +10,6 @@
 		<div id="container">
 			<div id="header">
 				<h1><%= link_to 'RubyJobs', :root %></h1>
-				<p>
-					<% if logged_in? %>
-						Hi <%= current_user.login %> <%= link_to 'logout', :logout %>
-					<% else %>
-						<%= link_to 'login', :login %> / <%= link_to 'signup', :signup %>
-					<% end %>
-				</p>
 			</div>
 			<div id="navigation">
 				<ul>
