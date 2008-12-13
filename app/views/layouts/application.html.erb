@@ -10,11 +10,9 @@
 		<div id="container">
 			<div id="header">
 				<h1><%= link_to 'RubyJobs', :root %></h1>
-			</div>
-			<div id="navigation">
-				<ul>
-					<li><%= link_to 'Home', :root %></li>
-				</ul>
+				<p>
+					<%= link_to 'Post a new job', new_job_path %>
+				</p>
 			</div>
 			<div id="content">
 				<% for flash_key in flash.keys %>

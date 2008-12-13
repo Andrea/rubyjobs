@@ -1,16 +1,16 @@
-<h1>Welcome to RubyJobs.ie</h1>
 
-<h2>Here are the jobs:</h2>
+<div id="search">
+	LIVE SEARCH BOX HERE
+</div>
 
-<ul>
-	<% for job in @jobs %>
-	<li>
-		<%= link_to 'Show', job %>
-	</li>
-	<% end %>
-</ul>
-
-
-
-
-<%= link_to 'New job', new_job_path %>
+<div id="results">
+	<span id="results_header">
+		Latest Ruby Jobs:
+	
+		<a href="#">RSS</a>
+	</span>
+	
+	<ul id="jobs">
+	<%= render :partial => @jobs %>
+	</ul>
+</div>
