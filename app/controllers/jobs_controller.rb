@@ -20,6 +20,8 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+		@types = Type.all
+		@locations = Location.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -33,6 +35,8 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(params[:job])
+		@types = Type.all
+		@locations = Location.all
 
     respond_to do |format|
       if @job.save

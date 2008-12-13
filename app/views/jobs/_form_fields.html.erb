@@ -1,8 +1,36 @@
 <p>
-   <%= form.label :company_name %><br />
-   <%= form.text_field :company_name %>
- </p>
- <p>
-   <%= form.label :company_website %><br />
-   <%= form.text_field :company_website %>
- </p>
+	<%= form.label :company_name %><br />
+	<%= form.text_field :company_name %>
+</p>
+<p>
+	<%= form.label :company_website %><br />
+	<%= form.text_field :company_website %>
+</p>
+<p>
+	<%= form.label :company_email %><br />
+	<%= form.text_field :company_email %>
+</p>
+
+<p>
+	<%= form.label :type %><br />
+	<%= form.select(:type_id, @types.collect {|t| [t.name, t.id]}, { :include_blank => true }) %>
+</p>
+
+<p>
+	<%= form.label :location %><br />
+	<%= form.select(:location_id, @locations.collect {|l| [l.name, l.id]}, { :include_blank => true }) %>
+</p>
+<p>
+	<%= form.label :title %><br />
+	<%= form.text_field :title %>
+</p>
+
+<p>
+	<%= form.label :description %><br />
+	<%= form.text_field :description %>
+</p>
+
+<p>
+	<%= form.label :how_to_apply %><br />
+	<%= form.text_field :how_to_apply %>
+</p>
