@@ -5,4 +5,5 @@ class Job < ActiveRecord::Base
 	belongs_to :type
 	belongs_to :location
 	
+	named_scope :recent, lambda { { :conditions => ['created_at > ?', 4.week.ago], :order => 'created_at DESC' } }
 end

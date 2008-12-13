@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 	
   def index
-    @jobs = Job.find(:all)
+    @jobs = Job.recent
 
     respond_to do |format|
       format.html # index.html.erb
