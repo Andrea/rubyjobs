@@ -29,8 +29,8 @@ class JobsController < ApplicationController
     end
   end
 
-  def edit #TODO: GJ: editing will require a secret key which will be emailed to the poster
-    @job = Job.find(params[:id])
+  def edit
+    @job = find_job_from_params
   end
 
   def create
@@ -50,8 +50,8 @@ class JobsController < ApplicationController
     end
   end
 
-  def update #TODO: GJ: updating will require a secret key which will be emailed to the poster
-    @job = Job.find(params[:id])
+  def update 
+    @job = find_job_from_params
 
     respond_to do |format|
       if @job.update_attributes(params[:job])
@@ -65,8 +65,8 @@ class JobsController < ApplicationController
     end
   end
 
-  def destroy #TODO: GJ: destroying will require a secret key which will be emailed to the poster
-    @job = Job.find(params[:id])
+  def destroy
+    @job = find_job_from_params
     @job.destroy
 
     respond_to do |format|
@@ -74,4 +74,10 @@ class JobsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	private
+	
+	def find_job_from_params #TODO: GJ: this will require a secret key which will be emailed to the poster
+		Job.find(params[:id])
+	end
 end
