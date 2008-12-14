@@ -29,7 +29,7 @@ class JobsController < ApplicationController
     end
   end
 
-  def edit
+  def edit #TODO: GJ: editing will require a secret key which will be emailed to the poster
     @job = Job.find(params[:id])
   end
 
@@ -50,7 +50,7 @@ class JobsController < ApplicationController
     end
   end
 
-  def update
+  def update #TODO: GJ: updating will require a secret key which will be emailed to the poster
     @job = Job.find(params[:id])
 
     respond_to do |format|
@@ -65,7 +65,7 @@ class JobsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy #TODO: GJ: destroying will require a secret key which will be emailed to the poster
     @job = Job.find(params[:id])
     @job.destroy
 
