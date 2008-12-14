@@ -1,3 +1,10 @@
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<h2><%= h(@job.title) %></h2>
+
+<p>Company: <%= h(@job.company_name) %></p>
+<p>Type: <%= @job.type.name %></p>
+<p>Location: <%= @job.location.name %></p>
+
+<p>Description: <%= h(@job.description) %></p>
+
+<p>How to apply: <%= h(@job.how_to_apply) %></p>
