@@ -10,7 +10,11 @@
 		<a href="#">RSS</a>
 	</span>
 	
-	<ul id="jobs">
-	<%= render :partial => @jobs %>
-	</ul>
+	<% if @jobs.length > 0 %>
+		<ul id="job_list">
+		<%= render :partial => @jobs %>
+		</ul>
+	<% else %>
+		<span id="no_jobs">Sorry, no jobs available</span>
+	<% end %>
 </div>
