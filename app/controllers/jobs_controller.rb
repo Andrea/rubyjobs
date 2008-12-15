@@ -6,6 +6,7 @@ class JobsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @jobs }
+			format.rss 
     end
   end
 
@@ -40,6 +41,8 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
+				#TODO: GJ: send an email to the poster containing edit, job is filled and remove job links
+	
         flash[:notice] = 'Job was successfully created.'
         format.html { redirect_to(@job) }
         format.xml  { render :xml => @job, :status => :created, :location => @job }

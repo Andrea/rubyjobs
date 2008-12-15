@@ -16,6 +16,12 @@ describe JobsController do
 		it "should render correctly" do
 			response.should be_success
 		end
+		
+		it "should render correctly as RSS" do #NOTE: GJ: this is resulting in a 406 response. what is the correct way to spec formats?
+			#get :index, :format => :rss
+			#response.should be_success
+			pending
+		end
 
 		it "should assign a jobs collection" do
 			assigns[:jobs].should_not be_nil

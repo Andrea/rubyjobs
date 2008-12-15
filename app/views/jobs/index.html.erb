@@ -7,7 +7,7 @@
 	<span id="results_header">
 		Latest Ruby Jobs:
 	
-		<a href="#">RSS</a>
+		<%= link_to 'RSS', formatted_jobs_url(:rss) %>
 	</span>
 	
 	<% if @jobs.length > 0 %>
