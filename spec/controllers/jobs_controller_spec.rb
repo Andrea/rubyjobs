@@ -19,6 +19,7 @@ describe JobsController do
 
 		it "should assign a jobs collection" do
 			assigns[:jobs].should_not be_nil
+			assigns[:jobs][0].should == @job
 		end
 
 		describe "when there are jobs to display" do
@@ -42,13 +43,21 @@ describe JobsController do
 				response.should_not have_tag("ul#job_list")
 			end
 		end
-
-		it "should have more specs"
-
 	end
 
 	describe "the show action" do
-		it "should have specs"
+		before do
+			@job = Factory.create_job
+			get 'show', :id => @job
+		end
+		
+		it "should be successful" do
+			response.should be_success
+		end
+		
+		it "should assign the job" do
+			assigns[:job].should == @job
+		end
 	end
 
 	describe "the new action" do
