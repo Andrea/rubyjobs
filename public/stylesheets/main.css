@@ -75,7 +75,18 @@ body {
 }
 
 	#header h1 {
-		font-size: 			2em;
+		background: url(/images/logo.png) no-repeat; 
+		float: left; 
+		width: 253px; 
+		height: 57px;
+	}
+	
+	#header h1 a {
+		position: absolute; 
+		left: 0px;
+		top: -100px;
+		width: 260px;
+		height: 160px;
 	}
 	
 	#header p {
