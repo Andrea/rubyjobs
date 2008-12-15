@@ -130,7 +130,9 @@ body {
 }
 
 #results_header {
-
+	display: block;
+	height: 30px;
+	font-size: 1.6em;
 }
 
 #results_header a {
