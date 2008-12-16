@@ -1,14 +1,14 @@
 namespace :db do
 
   desc 'Drops, then recreates and carries out migrations on your database.' 
-  task :clean_db => ['db:drop', 'db:create', 'db:migrate']
+  task :clean => ['db:drop', 'db:create', 'db:migrate']
 
   desc "Populate development database with some records to get you up and running."
-  task(:seed_db => :environment) do
+  task(:seed => :environment) do
 
     #TODO: DMG: Switch to using a factory, perhaps the factory module
 
-    Rake::Task['db:clean_dev_db'].invoke 
+    Rake::Task['db:clean'].invoke 
 
     require 'app/models/location'
 
