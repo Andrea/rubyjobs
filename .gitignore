@@ -6,3 +6,4 @@ doc/app
 test
 db/*.sqlite3
 db/schema.rb
+nbproject
