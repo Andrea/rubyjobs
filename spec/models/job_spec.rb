@@ -57,4 +57,17 @@ describe Job do
 			@job.errors.on(:how_to_apply).should_not be_nil
 		end
 	end
+
+	describe "searching" do
+		it "should be searchable" do
+			Job.should respond_to(:search_for)
+		end
+		
+		it "should search the company_name"
+		it "should search the title"
+		it "should search the description"
+		it "should search the how_to_apply"
+		it "should search the location"
+		it "should search the type"
+	end
 end

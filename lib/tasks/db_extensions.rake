@@ -5,32 +5,29 @@ namespace :db do
 
   desc "Populate development database with some records to get you up and running."
   task(:seed => :environment) do
-
-    #TODO: DMG: Switch to using a factory, perhaps the factory module
-
     Rake::Task['db:clean'].invoke 
 
-    require 'app/models/location'
+    ['Work from home', 'Dublin', 'Limerick', 'Cork'].each {|name| Location.create(:name => name) }
+    ['Contract', 'Permanent', 'Other'].each {|name| Type.create(:name => name) }
 
-    locations = ['Dublin', 'Limerick', 'Cork']
-    types= ['Developer', 'Tester']
-    jobs = ['Merb Developer', 'Rails Developer']
-
-    locations.each {|name| Location.create(:name => name) }
-
-    types.each {|name| Type.create(:name => name) }
-
-    Job.create(:title => jobs[0],
-      :company_name => 'Titus', :company_website => 'titusonmerb.com',
-      :company_email =>'info@testtitus.com', :location_id => 1, :type_id => 1,
-      :how_to_apply => 'Email',
+    Job.create(:title => 'Merb Developer',
+      :company_name => 'Titus Inc.', :company_website => 'titusonmerb.com',
+      :company_email =>'info@testtitus.com', :location_id => Location.all[0].id, :type_id => 1,
+      :how_to_apply => 'Email us at jobs [at] testtitus [dot] com',
       :description => 'Super job for the right person.')
 
-    Job.create(:title => jobs[1],
-      :company_name => 'Peter', :company_website => 'peteronmerb.com',
-      :company_email =>'info@testpeter.com', :location_id => 2, :type_id => 1,
-      :how_to_apply => 'Application Form',
+    Job.create(:title => 'Rails Developer',
+      :company_name => 'Peter Consulting', :company_website => 'peteronmerb.com',
+      :company_email =>'info@testpeter.com', :location_id => Location.all[1].id, :type_id => 1,
+      :how_to_apply => 'Fill out the pplication form on our website',
       :description => 'Needs 1 year of development experience.')
 
+			1.upto(30) do |i|
+				Job.create(:title => "Another Job #{i}",
+		  		:company_name => "Company #{i}", :company_website => 'somewebsite.com',
+		      :company_email =>'info@somewebsite.com', :location_id => Location.all[1], :type_id => 2,
+		      :how_to_apply => "Call us on 01-123456#{i}",
+		      :description => 'Some description here', :created_at => (i*1.5).days.ago)
+			end
   end
 end
