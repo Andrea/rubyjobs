@@ -14,6 +14,8 @@ Rails::Initializer.run do |config|
 	
   config.time_zone = 'UTC'
 
+	config.gem 'wvanbergen-scoped_search', :lib => 'scoped_search', :source => 'http://gems.github.com'
+
   config.action_controller.session = {
     :session_key => '_rubyjobs_session',
     :secret      => 'b800e63a9ec8ae0daa993c4616b52d8d043fb2f447199f4475eea337ce2c2a453e64c770c17df69f3d1528ff2912db879c9d8f6edc2ff0b87914fe480e1cbcc2'

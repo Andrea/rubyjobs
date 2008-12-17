@@ -49,6 +49,16 @@ describe JobsController do
 				response.should_not have_tag("ul#job_list")
 			end
 		end
+		
+		describe "when a search term is provided" do
+			it "should render correctly" do
+				get :index, {:search => 'merb'}
+				response.should be_success
+			end
+			
+			it "should assign jobs which contain the search term"
+			it "should not assign jobs which do not contain the search term"
+		end
 	end
 
 	describe "the show action" do

@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 	
   def index
-    @jobs = Job.recent
+    @jobs = Job.recent.search_for(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

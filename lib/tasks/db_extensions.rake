@@ -24,7 +24,7 @@ namespace :db do
 
 			1.upto(30) do |i|
 				Job.create(:title => "Another Job #{i}",
-		      :company_name => "Company #{i}", :company_website => 'somewebsite.com',
+		  		:company_name => "Company #{i}", :company_website => 'somewebsite.com',
 		      :company_email =>'info@somewebsite.com', :location_id => Location.all[1], :type_id => 2,
 		      :how_to_apply => "Call us on 01-123456#{i}",
 		      :description => 'Some description here', :created_at => (i*1.5).days.ago)
