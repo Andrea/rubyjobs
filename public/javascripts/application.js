@@ -8,10 +8,8 @@ jQuery.ajaxSetup({
 	'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript") }
 });
 
-
-//TEMP: GJ: this is just to test the ajax search
 $(function() {
-	$('#searchtest').click(function() {
+	$('#search_term').keypress(function() {
 		$.get("/jobs", { search: $('#search_term').val() }, null, "script")
 	});
 });
