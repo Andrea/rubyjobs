@@ -10,17 +10,22 @@
 	<!--    TODO: DMG: Should we include Javascripts here or on an 'as needed' basis?
 	        Also is there a more Rails-y way to include these Javascripts   -->
 
+		<%= javascript_tag "window.AUTH_TOKEN = '#{form_authenticity_token}';" %>
+
 	<!-- jQuery script -->
 	<script type="text/javascript" src="javascripts/jquery-1.2.6.min.js"></script>
 	<!-- Quicksilver script at http://orderedlist.com/demos/quicksilverjs/javascripts/quicksilver.js Thanks! -->
 	<script type="text/javascript" src="javascripts/quicksilver.js"></script>
 	<!-- jQuery Livesearch script at http://ejohn.org/apps/livesearch/jquery.livesearch.js Thanks! -->
 	<script type="text/javascript" src="javascripts/jquery.livesearch.js"></script>
+	
+	<script type="text/javascript" src="javascripts/application.js"></script>
 
 	<!-- Wires up the livesearch on page load -->
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			$('#search_term').liveUpdate('#job_list').focus();
+			//NOTE: GJ: commenting out the current live update, we need to hook it into the new /jobs.js search endpoint
+			//$('#search_term').liveUpdate('#job_list').focus();
 		});
 	</script>
 
