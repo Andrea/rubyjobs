@@ -9,7 +9,7 @@ jQuery.ajaxSetup({
 });
 
 $(function() {
-	$('#search_term').keypress(function() {
-		$.get("/jobs", { search: $('#search_term').val() }, null, "script")
+	$('#search_term').delayedObserver(0.5, function(value, object) {
+		$.get("/jobs", { search: value }, null, "script");
 	});
 });
