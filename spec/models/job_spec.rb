@@ -63,11 +63,42 @@ describe Job do
 			Job.should respond_to(:search_for)
 		end
 		
-		it "should search the company_name"
-		it "should search the title"
-		it "should search the description"
-		it "should search the how_to_apply"
-		it "should search the location"
-		it "should search the type"
+		it "should search the company_name" do
+			Job.search_for('google').length.should == 0
+			Factory.create_job(:company_name => 'Google')
+			Job.search_for('google').length.should == 1
+		end
+		
+		it "should search the title" do
+			Job.search_for('contract').length.should == 0
+			Factory.create_job(:title => 'Developer needed (contract)')
+			Job.search_for('contract').length.should == 1
+		end
+		
+		it "should search the description" do
+			Job.search_for('june 2009').length.should == 0
+			Factory.create_job(:description => 'This job starts in June 2009')
+			Job.search_for('june 2009').length.should == 1
+		end
+		
+		it "should search the how_to_apply" do
+			Job.search_for('jobs@acme.org').length.should == 0
+			Factory.create_job(:how_to_apply => 'email us - jobs@acme.org')
+			Job.search_for('jobs@acme.org').length.should == 1
+		end
+		
+		it "should search the location" do
+			Job.search_for('dublin').length.should == 0
+			location = Factory.create_location(:name => 'Dublin')
+			Factory.create_job(:location_id => location.id)
+			Job.search_for('dublin').length.should == 1
+		end
+		
+		it "should search the type" do
+			Job.search_for('permanent').length.should == 0
+			type = Factory.create_type(:name => 'Permanent')
+			Factory.create_job(:type_id => type.id)
+			Job.search_for('permanent').length.should == 1
+		end
 	end
 end
