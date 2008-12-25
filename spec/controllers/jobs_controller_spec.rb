@@ -15,6 +15,7 @@ describe JobsController do
 
 		it "should render correctly" do
 			response.should be_success
+			response.should render_template 'index'
 		end
 		
 		it "should render correctly as RSS" do #NOTE: GJ: this is resulting in a 406 response. what is the correct way to spec formats?
@@ -54,6 +55,7 @@ describe JobsController do
 			it "should render correctly" do
 				get :index, {:search => 'merb'}
 				response.should be_success
+				response.should render_template 'index'
 			end
 			
 			it "should assign jobs which contain the search term"
@@ -69,6 +71,7 @@ describe JobsController do
 		
 		it "should be successful" do
 			response.should be_success
+			response.should render_template 'show'
 		end
 		
 		it "should assign a job" do
@@ -83,6 +86,7 @@ describe JobsController do
 
       it "should be successful" do
         response.should be_success
+        response.should render_template 'new'
       end
 
       it "should assign a job" do
@@ -90,8 +94,6 @@ describe JobsController do
         assigns[:job].should be_an_instance_of Job
       end
               
-      it "should render new job template"
-    
       it "should have more specs"
 
     end
@@ -104,6 +106,7 @@ describe JobsController do
 
       it "should be successful" do
         response.should be_success
+        response.should render_template 'edit'
       end
 
       it "should assign a job" do
