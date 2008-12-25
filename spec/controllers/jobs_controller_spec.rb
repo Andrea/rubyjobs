@@ -71,18 +71,48 @@ describe JobsController do
 			response.should be_success
 		end
 		
-		it "should assign the job" do
+		it "should assign a job" do
 			assigns[:job].should == @job
 		end
 	end
 
-	describe "the new action" do
-		it "should have specs"
-	end
+    describe "the new action" do
+      before do
+        get :new
+      end
 
-	describe "the edit action" do
-		it "should have specs"
-	end
+      it "should be successful" do
+        response.should be_success
+      end
+
+      it "should assign a job" do
+        assigns[:job].should_not be_nil
+        assigns[:job].should be_an_instance_of Job
+      end
+              
+      it "should render new job template"
+    
+      it "should have more specs"
+
+    end
+
+    describe "the edit action" do
+      before do
+        @job = Factory.create_job
+        get :edit, :id => @job
+      end
+
+      it "should be successful" do
+        response.should be_success
+      end
+
+      it "should assign a job" do
+        assigns[:job].should == @job
+      end
+    
+      it "should have more specs"
+    end
+
 
 	describe "the create action" do
 		it "should have specs"
