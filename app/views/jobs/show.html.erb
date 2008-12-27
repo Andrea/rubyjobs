@@ -1,10 +1,8 @@
 
-<h2><%= h(@job.title) %></h2>
-
-<p>Company: <%= h(@job.company_name) %></p>
-<p>Type: <%= @job.type.name %></p>
-<p>Location: <%= @job.location.name %></p>
-
-<p>Description: <%= h(@job.description) %></p>
-
-<p>How to apply: <%= h(@job.how_to_apply) %></p>
+<h2 id="job_title"><%= h(@job.title) %> <span class="connective">at</span> <%= h(@job.company_name) %></h2>
+<dl id="job_details">
+  <dt>Type:</dt><dd><%= @job.type.name %></dd>
+  <dt>Location:</dt><dd><%= @job.location.name %></dd>
+  <dt class="description">Description:</dt><dd class="description"><%= simple_format(@job.description) %></dd>
+  <dt>How to apply:</dt><dd><%= h(@job.how_to_apply) %></dd>
+</dl>

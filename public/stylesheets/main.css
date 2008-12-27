@@ -168,6 +168,28 @@ body {
 			float: right;
 		}
 
+h2#job_title {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+h2#job_title span.connective {
+  font-weight: normal;
+  font-style: italic;
+}
+dl#job_details {
+  margin-top: 1em;
+  line-height: 1.5;
+}
+dl#job_details dt {
+  font-weight: bold;
+  float: left;
+}
+dl#job_details dd {
+  padding-left: 140px;
+}
+dl#job_details .description {
+  margin: 1em 0;
+}
 
 
 #footer {
