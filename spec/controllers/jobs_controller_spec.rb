@@ -41,12 +41,12 @@ describe JobsController do
 			end
 			
 			it "should show a message indicating that there are no jobs" do
-				response.should have_tag("span#no_jobs")
+				response.should have_tag("tr#no_jobs")
 			end
 
-			it "should not display a list of jobs" do
+			it "should not display any jobs in the table" do
 				get :index
-				response.should_not have_tag("ul#job_list")
+				response.should_not have_tag("tr.job")
 			end
 		end
 		
@@ -54,6 +54,11 @@ describe JobsController do
 			it "should render correctly" do
 				get :index, {:search => 'merb'}
 				response.should be_success
+			end
+
+			it "should link to an RSS feed for the search term" do
+				get :index, {:search => 'merb'}
+				response.should have_text(/a\shref=\"http.+jobs\.rss\?search=merb/)
 			end
 			
 			it "should assign jobs which contain the search term"

@@ -137,13 +137,20 @@ body {
 }
 
 #results_header {
-	display: block;
-	height: 30px;
 	font-size: 1.6em;
 }
 
-#results_header a {
-	float: right;
+#rss_link {
+  float: right;
+  background: url(/images/rss-28x28.png) no-repeat center right;
+  padding: 8px 30px 8px 0;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size: 0.8em;
+  color: #000;
+  text-decoration: none;
+}
+#rss_search {
 }
 	
 
@@ -153,7 +160,7 @@ body {
 	width: 100%;
 }
 
-	.job td {
+	#job_list td {
 		border-bottom: 1px solid #ccc;
 		padding: 6px;
 	}
