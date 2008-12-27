@@ -15,9 +15,9 @@
 	</span>
 	
 	<% if @jobs.length > 0 %>
-		<ul id="job_list">
+		<table id="job_list">
 		<%= render :partial => @jobs %>
-		</ul>
+		</table>
 	<% else %>
 		<span id="no_jobs">Sorry, no jobs available</span>
 	<% end %>

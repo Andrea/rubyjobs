@@ -143,9 +143,10 @@ body {
 #job_list {
 	margin-top: 10px;
 	background-color: #eee;
+	width: 100%;
 }
 
-	.job {
+	.job td {
 		border-bottom: 1px solid #ccc;
 		padding: 6px;
 	}
@@ -165,7 +166,7 @@ body {
 		}
 		
 		.job .created_at {
-			float: right;
+		  text-align: right;
 		}
 
 h2#job_title {
