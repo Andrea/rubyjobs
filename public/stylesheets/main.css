@@ -124,6 +124,13 @@ body {
 	text-align: center;
 	padding: 20px;
 }
+  #search form label{
+    display: block;
+    margin-bottom:0.5em;
+  }
+  #search form input {
+    font-size: 1.5em;
+  }
 
 #results {
 
