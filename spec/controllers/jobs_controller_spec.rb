@@ -30,7 +30,7 @@ describe JobsController do
 
 		describe "when there are jobs to display" do
 			it "should list the most recent jobs" do
-				response.should have_tag("ul#job_list")
+				response.should have_tag("table#job_list")
 			end
 		end
 
