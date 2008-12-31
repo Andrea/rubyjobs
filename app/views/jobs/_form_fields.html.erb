@@ -1,3 +1,18 @@
+<fieldset class="first_col">
+<p>
+	<%= form.label :title %><br />
+	<%= form.text_field :title %>
+</p>
+
+<p>
+	<%= form.label :type %><br />
+	<%= form.select(:type_id, @types.collect {|t| [t.name, t.id]}, { :include_blank => true }) %>
+</p>
+
+<p>
+	<%= form.label :location %><br />
+	<%= form.select(:location_id, @locations.collect {|l| [l.name, l.id]}, { :include_blank => true }) %>
+</p>
 <p>
 	<%= form.label :company_name %><br />
 	<%= form.text_field :company_name %>
@@ -12,25 +27,16 @@
 </p>
 
 <p>
-	<%= form.label :type %><br />
-	<%= form.select(:type_id, @types.collect {|t| [t.name, t.id]}, { :include_blank => true }) %>
+	<%= form.label :how_to_apply %><br />
+	<%= form.text_field :how_to_apply %>
 </p>
 
-<p>
-	<%= form.label :location %><br />
-	<%= form.select(:location_id, @locations.collect {|l| [l.name, l.id]}, { :include_blank => true }) %>
-</p>
-<p>
-	<%= form.label :title %><br />
-	<%= form.text_field :title %>
-</p>
+</fieldset>
 
+<fieldset class="second_col">
 <p>
 	<%= form.label :description %><br />
 	<%= form.text_area :description %>
 </p>
 
-<p>
-	<%= form.label :how_to_apply %><br />
-	<%= form.text_field :how_to_apply %>
-</p>
+</fieldset>
