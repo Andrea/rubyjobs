@@ -124,28 +124,43 @@ body {
 	text-align: center;
 	padding: 20px;
 }
+  #search form label{
+    display: block;
+    margin-bottom:0.5em;
+  }
+  #search form input {
+    font-size: 1.5em;
+  }
 
 #results {
 
 }
 
 #results_header {
-	display: block;
-	height: 30px;
 	font-size: 1.6em;
 }
 
-#results_header a {
-	float: right;
+#rss_link {
+  float: right;
+  background: url(/images/rss-28x28.png) no-repeat center right;
+  padding: 8px 30px 8px 0;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size: 0.8em;
+  color: #000;
+  text-decoration: none;
+}
+#rss_search {
 }
 	
 
 #job_list {
 	margin-top: 10px;
 	background-color: #eee;
+	width: 100%;
 }
 
-	.job {
+	#job_list td {
 		border-bottom: 1px solid #ccc;
 		padding: 6px;
 	}
@@ -165,9 +180,31 @@ body {
 		}
 		
 		.job .created_at {
-			float: right;
+		  text-align: right;
 		}
 
+h2#job_title {
+  font-weight: bold;
+  font-size: 1.6em;
+}
+h2#job_title span.connective {
+  font-weight: normal;
+  font-style: italic;
+}
+dl#job_details {
+  margin-top: 1em;
+  line-height: 1.5;
+}
+dl#job_details dt {
+  font-weight: bold;
+  float: left;
+}
+dl#job_details dd {
+  padding-left: 140px;
+}
+dl#job_details .description {
+  margin: 1em 0;
+}
 
 
 #footer {

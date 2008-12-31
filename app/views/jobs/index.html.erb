@@ -1,24 +1,29 @@
 <!-- TODO: DMG: Move search div to partial -->
 <div id="search">
-	Jobs searched as you type...
 	<form method="get" autocomplete="off">
-		<input type="text" value="" name="search_term" id="search_term" />
+	  <label for="search_term">Jobs searched as you type...</label>
+		<input type="text" value="<%=h params[:search] %>" name="search" id="search_term" />
 	</form>
 </div>
 
 
 <div id="results">
-	<span id="results_header">
-		Latest Ruby Jobs:
-	
-		<%= link_to '<img src="/images/rss-28x28.png" alt="RSS Feed" />', formatted_jobs_url(:rss) %>
-	</span>
-	
-	<% if @jobs.length > 0 %>
-		<ul id="job_list">
-		<%= render :partial => @jobs %>
-		</ul>
-	<% else %>
-		<span id="no_jobs">Sorry, no jobs available</span>
+  <% link_to formatted_jobs_url(:rss, rss_link_attributes), :id => "rss_link"  do %>
+		<span id="rss_search">RSS feed
+      <%=h "for '#{params[:search]}'" if params[:search] %>
+		</span>
 	<% end %>
+	
+	<h1 id="results_header">
+		Latest Ruby Jobs:
+	</h1>
+
+	<table id="job_list">
+	<% if @jobs.length > 0 %>
+		<%= render :partial => @jobs %>
+	<% else %>
+    <tr id="no_jobs"><td>No jobs found!</td></tr>
+	<% end %>
+	</table>
+
 </div>
