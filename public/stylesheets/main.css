@@ -88,8 +88,17 @@ body {
 	
 	#header p {
 		float: right;
+		margin-top: 20px;
 	}
-
+	
+	#header p a {
+		background-color: #FFFFCC;
+		padding: 6px;
+		color: #333;
+		font-size: 1.2em;
+		font-weight: bolder;
+	}
+	
 #content {
 	min-height: 		400px;
 	padding: 				4px;

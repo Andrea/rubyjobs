@@ -3,6 +3,28 @@ require File.dirname(__FILE__) + '/../factory'
 include Factory
 
 describe Job do
+	describe "when creating a job" do
+		it "should have an action_key" do
+			@job = Factory.create_job
+			@job.action_key.should_not be_nil
+		end
+		
+		it "should have a unique action_key" do
+			@job1 = Factory.create_job
+			@job2 = Factory.create_job
+			@job1.action_key.should_not == @job2.action_key
+		end
+	end
+	
+	describe "when saving a job" do
+		it "the action_key should be the same as before the save" do
+			@job1 = Factory.create_job
+			pre_save_action_key = @job1.action_key
+			@job1.save!
+			@job1.action_key.should == pre_save_action_key
+		end
+	end
+	
 	describe "validations" do
 		it "should be valid with valid attributes" do
 			@job = Factory.create_job
