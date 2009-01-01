@@ -1,34 +1,34 @@
 <fieldset class="first_col">
 <p>
 	<%= form.label :title %><br />
-	<%= form.text_field :title %>
+	<%= form.text_field :title, :tabindex => 1 %>
 </p>
 
 <p>
 	<%= form.label :type %><br />
-	<%= form.select(:type_id, @types.collect {|t| [t.name, t.id]}, { :include_blank => true }) %>
+	<%= form.select(:type_id, @types.collect {|t| [t.name, t.id]}, { :include_blank => true }, :tabindex => 2 ) %>
 </p>
 
 <p>
 	<%= form.label :location %><br />
-	<%= form.select(:location_id, @locations.collect {|l| [l.name, l.id]}, { :include_blank => true }) %>
+	<%= form.select(:location_id, @locations.collect {|l| [l.name, l.id]}, { :include_blank => true }, :tabindex => 3 ) %>
 </p>
 <p>
 	<%= form.label :company_name %><br />
-	<%= form.text_field :company_name %>
+	<%= form.text_field :company_name, :tabindex => 4 %>
 </p>
 <p>
 	<%= form.label :company_website %><br />
-	<%= form.text_field :company_website %>
+	<%= form.text_field :company_website, :tabindex => 5 %>
 </p>
 <p>
 	<%= form.label :company_email %><br />
-	<%= form.text_field :company_email %>
+	<%= form.text_field :company_email, :tabindex => 6 %>
 </p>
 
 <p>
-	<%= form.label :how_to_apply %><br />
-	<%= form.text_field :how_to_apply %>
+	<%= form.label :how_to_apply %>(<span class='help_tip' title = 'eg. Email CV to jobs@somecompany.com, phone Dave at 01-XXXXXXX, etc.'>?</span>)<br />
+	<%= form.text_field :how_to_apply, :tabindex => 7 %>
 </p>
 
 </fieldset>
@@ -36,7 +36,7 @@
 <fieldset class="second_col">
 <p>
 	<%= form.label :description %><br />
-	<%= form.text_area :description %>
+	<%= form.text_area :description, :tabindex => 8 %>
 </p>
 
 </fieldset>
