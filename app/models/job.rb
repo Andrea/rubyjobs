@@ -13,6 +13,6 @@ class Job < ActiveRecord::Base
 	private
 	
 	def set_action_key
-		self.action_key = ActiveSupport::SecureRandom.hex(16) if self.action_key.nil?
+		self.action_key = ActiveSupport::SecureRandom.hex(8) if self.action_key.nil?
 	end
 end

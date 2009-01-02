@@ -42,7 +42,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-				#TODO: GJ: send an email to the poster containing edit, job is filled and remove job links
+				JobMailer.deliver_confirmation(@job)
 	
         flash[:notice] = 'Job was successfully created.'
         format.html { redirect_to(@job) }
