@@ -4,24 +4,24 @@ include Factory
 
 describe Job do
 	describe "when creating a job" do
-		it "should have an action_key" do
+		it "should have a key" do
 			@job = Factory.create_job
-			@job.action_key.should_not be_nil
+			@job.key.should_not be_nil
 		end
 		
-		it "should have a unique action_key" do
+		it "should have a unique key" do
 			@job1 = Factory.create_job
 			@job2 = Factory.create_job
-			@job1.action_key.should_not == @job2.action_key
+			@job1.key.should_not == @job2.key
 		end
 	end
 	
 	describe "when saving a job" do
-		it "the action_key should be the same as before the save" do
+		it "the key should be the same as before the save" do
 			@job1 = Factory.create_job
-			pre_save_action_key = @job1.action_key
+			pre_save_key = @job1.key
 			@job1.save!
-			@job1.action_key.should == pre_save_action_key
+			@job1.key.should == pre_save_key
 		end
 	end
 	

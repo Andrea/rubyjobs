@@ -8,11 +8,11 @@ class Job < ActiveRecord::Base
 	searchable_on :company_name, :title, :description, :how_to_apply, :location_name, :type_name #see http://github.com/wvanbergen/scoped_search/tree/master
 	named_scope :recent, lambda { { :conditions => ['created_at > ?', 4.week.ago], :order => 'created_at DESC' } }
 	
-	before_save :set_action_key
+	before_save :set_key
 	
 	private
 	
-	def set_action_key
-		self.action_key = ActiveSupport::SecureRandom.hex(8) if self.action_key.nil?
+	def set_key
+		self.key = ActiveSupport::SecureRandom.hex(8) if self.key.nil?
 	end
 end

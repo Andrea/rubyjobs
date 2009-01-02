@@ -22,7 +22,7 @@ describe JobMailer do
 		end
 		
 		it "should provide a link to edit the job" do
-			@email.body.should =~ /edit\?key=#{@job.action_key}/
+			@email.body.should =~ /edit\?key=#{@job.key}/
 		end
 	end
 end

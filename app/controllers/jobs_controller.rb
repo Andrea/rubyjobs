@@ -32,6 +32,8 @@ class JobsController < ApplicationController
 	end
 
 	def edit
+		@types = Type.all
+		@locations = Location.all
 		find_job_with_key
 	end
 
@@ -88,7 +90,7 @@ class JobsController < ApplicationController
 	private
 
 	def find_job_with_key
-		@job = Job.find_by_id_and_action_key(params[:id], params[:key])
+		@job = Job.find_by_id_and_key(params[:id], params[:key])
 		
 		if @job.nil?
 			flash[:notice] = "That job is no longer available"
