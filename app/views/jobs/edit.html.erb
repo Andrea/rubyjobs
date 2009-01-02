@@ -1,12 +1,14 @@
-<h1>Editing job</h1>
 
-<% form_for(@job) do |f| %>
-  <%= f.error_messages %>
+<h1>Edit Job</h1>
 
-  <p>
-    <%= f.submit "Update" %>
+<% form_for(@job) do |form| %>
+  <%= form.error_messages %>
+	<%= hidden_field_tag :key, @job.key %>
+  <%= render :partial => 'form_fields', :locals => {:form => form} %>
+
+  <p class='form_control'>
+    <%= form.submit "Update" %>
+    <%= link_to 'Back', jobs_path %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
