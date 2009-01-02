@@ -122,21 +122,46 @@ describe JobsController do
 	end
 
 	describe "the edit action" do
-		before do
-			@job = Factory.create_job
-			get :edit, :id => @job
-		end
+		describe "with a valid action key" do
+			before do
+				@job = Factory.create_job
+				get :edit, { :id => @job, :key => @job.action_key }
+			end
+			
+			it "should be successful" do
+				response.should be_success
+				response.should render_template 'edit'
+			end
 
-		it "should be successful" do
-			response.should be_success
-			response.should render_template 'edit'
+			it "should assign a job" do
+				assigns[:job].should == @job
+			end
+			
+			it "should display the edit form"
+			it "should have a hidden key field"
 		end
-
-		it "should assign a job" do
-			assigns[:job].should == @job
+		
+		describe "with no action key" do
+			before do
+				@job = Factory.create_job
+				get :edit, { :id => @job }
+			end
+			
+			it "should redirect to homepage" do
+				response.should be_redirect
+			end
 		end
-
-		it "should have more specs"
+		
+		describe "with an invalid action key" do
+			before do
+				@job = Factory.create_job
+				get :edit, { :id => @job, :key => "abc#{@job.action_key}" }
+			end
+			
+			it "should redirect to homepage" do
+				response.should be_redirect
+			end
+		end
 	end
 
 	describe "the create action" do
