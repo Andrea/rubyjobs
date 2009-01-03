@@ -91,7 +91,7 @@ body {
 		margin-top: 20px;
 	}
 	
-	#header p a {
+	#header p a, .highlighted_link a {
 		background-color: #FFFFCC;
 		padding: 6px;
 		color: #333;
@@ -201,6 +201,7 @@ h2#job_title span.connective {
 dl#job_details {
   margin-top: 1em;
   line-height: 1.5;
+	margin-bottom: 30px;
 }
 dl#job_details dt {
   font-weight: bold;
