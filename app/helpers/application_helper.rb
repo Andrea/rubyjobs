@@ -7,7 +7,7 @@ module ApplicationHelper
 
 
   def main_nav
-    jobs_list_linkable_actions = ['new','show', 'edit']
+    jobs_list_linkable_actions = ['new', 'edit']
 
     if params[:controller] == 'jobs' and jobs_list_linkable_actions.include?(params[:action])
       jobs_list_link
