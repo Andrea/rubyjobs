@@ -273,3 +273,11 @@ dl#job_details .description {
 	font-size: 				0.8em;
 	text-align: 			center;
 }
+
+#navbar {
+	text-align:				right;
+	font-size:				0.8em;
+	color:					#ae0000;
+	
+	
+}

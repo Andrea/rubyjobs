@@ -25,6 +25,9 @@
 				</p>
 			</div>
 			<div id="content">
+			<div id="navbar">
+				 Other | Menu | Items | <%= link_to 'About Us', :controller => 'about', :action => 'index' %>
+			</div>
 				<% for flash_key in flash.keys %>
 					<p class="flash flash_<%= flash_key %>"><%= flash[flash_key] %></p>
 				<% end %>
