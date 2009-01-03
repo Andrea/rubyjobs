@@ -5,25 +5,12 @@ module ApplicationHelper
     params[param_name] && !params[param_name].blank?
   end
 
-
   def main_nav
-    jobs_list_linkable_actions = ['new', 'edit']
-
-    if params[:controller] == 'jobs' and jobs_list_linkable_actions.include?(params[:action])
-      jobs_list_link
+    if params[:controller] == 'jobs' and ['new', 'edit'].include?(params[:action])
+      link_to('<< Return to jobs list', :root)
     else
-      new_job_link
+      link_to('Post a new job >>', new_job_path)
     end
-  end
-
-
-  def new_job_link
-    link_to('Post a new job >>', new_job_path)
-  end
-
-  
-  def jobs_list_link
-    link_to('<< Return to jobs list', :root)
   end
   
 end
