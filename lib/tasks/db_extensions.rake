@@ -3,12 +3,23 @@ namespace :db do
   desc 'Drops, then recreates and carries out migrations on your database.' 
   task :clean => ['db:drop', 'db:create', 'db:migrate']
 
+	desc "Populate database with locations"
+	task(:seed_locations => :environment) do
+		locations = ['Work from home', 'Other']
+		locations += %w{Antrim Armagh Carlow Cavan Clare Cork Derry Donegal Down Dublin Fermanagh Galway Kerry Kildare Kilkenny Laois Leitrim Limerick Longford Louth Mayo Meath Monaghan Offaly Roscommon Sligo Tipperary Tyrone Waterford Westmeath Wexford Wicklow}
+		locations.each {|name| Location.create(:name => name) }
+	end
+	
+	desc "Populate database with locations"
+	task(:seed_types => :environment) do
+		['Contract', 'Permanent', 'Other'].each {|name| Type.create(:name => name) }
+	end
+
   desc "Populate development database with some records to get you up and running."
   task(:seed => :environment) do
-    Rake::Task['db:clean'].invoke 
-
-    ['Work from home', 'Dublin', 'Limerick', 'Cork'].each {|name| Location.create(:name => name) }
-    ['Contract', 'Permanent', 'Other'].each {|name| Type.create(:name => name) }
+    Rake::Task['db:clean'].invoke
+		Rake::Task['db:seed_locations'].invoke
+		Rake::Task['db:seed_types'].invoke 
 
     Job.create(:title => 'Merb Developer',
       :company_name => 'Titus Inc.', :company_website => 'titusonmerb.com',
