@@ -197,6 +197,10 @@ body {
 			color: #666;
 			font-size: .9em;
 		}
+		
+#no_jobs {
+	line-height: 2em;
+}
 
 h2#job_title {
   font-weight: bold;

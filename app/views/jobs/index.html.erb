@@ -1,4 +1,3 @@
-<!-- TODO: DMG: Move search div to partial -->
 <div id="search">
 	<form method="get" autocomplete="off">
 	  <label for="search_term">Jobs searched as you type...</label>
@@ -22,7 +21,10 @@
 	<% if @jobs.length > 0 %>
 		<%= render :partial => @jobs %>
 	<% else %>
-    <span id="no_jobs">Sorry, no jobs available</span>
+    <span id="no_jobs">
+			<p>We've recently launched and there are no jobs available at the moment.</p>
+			<p>Would you like to <%= link_to 'post the first job?', new_job_path %></p>
+		</span>
 	<% end %>
 	</ul>
 
