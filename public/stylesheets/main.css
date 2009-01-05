@@ -220,6 +220,16 @@ dl#job_details .description {
   margin: 1em 0;
 }
 
+ul#rules {
+	background-color: #eee;
+	padding: 4px;
+	margin-bottom: 12px;
+	list-style-type: none;
+	font-style: italic;
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+
 .errorExplanation {
   padding: 10px;
   border: 1px solid black;
