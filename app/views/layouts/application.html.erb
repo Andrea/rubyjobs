@@ -18,16 +18,14 @@
 	</head>
 	<body>
 		<div id="container">
-			
-			<div style="background-color: red; color: white; padding:10px;">
-				<h2>NOTE: We are in the process of deploying this app for the first time. The site will be live later today.</h2>
-			</div>
-			
 			<div id="header">
 				<h1><%= link_to 'RubyJobs', :root %></h1>
 				<p>
 					<%= main_nav %>
 				</p>
+			</div>
+			<div style="background-color: red; color: white; padding:10px;">
+				<h2>NOTE: We are in the process of deploying this app for the first time. The site will be live later today.</h2>
 			</div>
 			<div id="content">
 				<% for flash_key in flash.keys %>
