@@ -1,17 +1,17 @@
 <table class="form">
 	<tr>
-  	<th>Company:</th>
-  	<td><%= form.text_field :company_name %></td>
+  	<th><%= form.label :company %>:</th>
+  	<td><%= form.text_field :company %></td>
 	</tr>
 	<tr>
   	<th>URL:</th>
   	<td>
-    	<%= form.text_field :company_website %><br/>
+    	<%= form.text_field :url %><br/>
     	eg. http://www.incremental.ie/
   	</td>
 	</tr>
 	<tr>
-  	<th>Title:</th>
+  	<th><%= form.label :title %>:</th>
   	<td>
     	<%= form.text_field :title %><br/>
     	eg. "Rails Developer" or "Merb Guru"
@@ -30,13 +30,13 @@
   	</td>
 	</tr>
 	<tr>
-  	<th>Description:</th>
+  	<th><%= form.label :description %>:</th>
   	<td>
 			<%= form.text_area :description %>
   	</td>
 	</tr>
 	<tr>
-  	<th>How to apply:</th>
+  	<th><%= form.label :how_to_apply %>:</th>
   	<td>
     	<%= form.text_field :how_to_apply %>
   	</td>
@@ -44,7 +44,7 @@
 	<tr class="private">
   	<th>Your Email:</th>
   	<td>
-    	<%= form.text_field :company_email %><br />
+    	<%= form.text_field :email %><br />
 			*This will remain private* - Please use a real email, you won't be able to edit the job without one.
   	</td>
 	</tr>
