@@ -14,12 +14,17 @@ namespace :db do
 	task(:seed_types => :environment) do
 		['Contract', 'Permanent', 'Other'].each {|name| Type.create(:name => name) }
 	end
-
-  desc "Populate development database with some records to get you up and running."
-  task(:seed => :environment) do
+	
+	desc "Populate database with the minimum essential data"
+  task(:seed_minimum => :environment) do
     Rake::Task['db:clean'].invoke
 		Rake::Task['db:seed_locations'].invoke
-		Rake::Task['db:seed_types'].invoke 
+		Rake::Task['db:seed_types'].invoke
+	end
+
+  desc "Populate database with some records to get you up and running."
+  task(:seed => :environment) do
+    Rake::Task['db:seed_minimum'].invoke
 
     Job.create(:title => 'Merb Developer',
       :company => 'Titus Inc.', :url => 'http://www.titusonmerb.com/',
