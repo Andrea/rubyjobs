@@ -22,8 +22,8 @@
 		<%= render :partial => @jobs %>
 	<% else %>
     <span id="no_jobs">
-			<p>We've recently launched and there are no jobs available at the moment.</p>
-			<p>Would you like to <%= link_to 'post the first job?', new_job_path %></p>
+			<p>Maybe it's the economy or maybe it's because we've recently launched but there are no jobs here at the moment.</p>
+			<p>Perhaps you would like to <%= link_to 'post the first job', new_job_path %>?</p>
 		</span>
 	<% end %>
 	</ul>
