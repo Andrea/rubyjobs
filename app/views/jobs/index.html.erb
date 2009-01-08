@@ -3,6 +3,7 @@
 	  <label for="search_term">Jobs searched as you type...</label>
 		<input type="text" value="<%=h params[:search] %>" name="search" id="search_term" />
 	</form>
+	<%= set_focus_to_id 'search_term' %>
 </div>
 
 
